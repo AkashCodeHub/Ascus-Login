@@ -8,8 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = document.getElementById('password').value;
             
             // Here you would typically make an API call to verify credentials
-            // For demo purposes, we'll just redirect to OTP page
-            window.location.href = 'otp.html';
+            // For demo purposes, we'll use a simple check
+            if (email && password) {
+                // Successful login
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Please enter both email and password');
+            }
         });
     }
 

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Payroll Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="ascus.jpg" alt="HR Logo">
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>People</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Payroll</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Time Center</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="header">
+                <h1>Payroll</h1>
+                <div class="header-actions">
+                    <button class="icon-button">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="icon-button">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="icon-button">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Payroll Summary -->
+            <div class="payroll-summary">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h2>Payroll Summary</h2>
+                        <div class="chart-filters">
+                            <select class="time-filter">
+                                <option>3 Months</option>
+                                <option>6 Months</option>
+                                <option>1 Year</option>
+                            </select>
+                            <select class="type-filter">
+                                <option>All Teams</option>
+                                <option>Development</option>
+                                <option>Design</option>
+                            </select>
+                        </div>
+                    </div>
+                    <canvas id="payrollChart"></canvas>
+                </div>
+
+                <!-- Payment Status -->
+                <div class="payment-status">
+                    <h2>Payment Status</h2>
+                    <div class="status-bars">
+                        <div class="status-item">
+                            <div class="status-label">
+                                <span>Paid</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%; background-color: #4CAF50;"></div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-label">
+                                <span>Pending</span>
+                                <span>10%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 10%; background-color: #FFC107;"></div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-label">
+                                <span>Unpaid</span>
+                                <span>5%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 5%; background-color: #F44336;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employee Payroll Table -->
+            <div class="employee-payroll">
+                <div class="table-header">
+                    <h2>Employee Statistics</h2>
+                    <div class="table-actions">
+                        <button class="action-button">
+                            <i class="fas fa-filter"></i>
+                            Filter
+                        </button>
+                        <button class="action-button">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Employee Name</th>
+                                <th>Email Address</th>
+                                <th>Status</th>
+                                <th>Salary</th>
+                                <th>Working</th>
+                                <th>Performance</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="employee-info">
+                                        <img src="download.jpg" alt="John Smith">
+                                        <span>John Smith</span>
+                                    </div>
+                                </td>
+                                <td>john.smith@example.com</td>
+                                <td><span class="status paid">Paid</span></td>
+                                <td>$4,500</td>
+                                <td>Full-time</td>
+                                <td>
+                                    <div class="performance-bar">
+                                        <div class="performance-progress" style="width: 85%"></div>
+                                    </div>
+                                </td>
+                                <td>15 Dec 2023</td>
+                            </tr>
+                            <!-- Add more employee rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html> 
